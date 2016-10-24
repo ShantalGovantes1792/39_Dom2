@@ -16,7 +16,16 @@ var quitarSpan = document.getElementsByTagName("span");
 
 function validateForm(){
 	/* Este ciclo es para quitar los spans cuando vuelves a poner otra vez la 
-	respuesta y la ingresar con el botón y no se sobre pongan los spans*/
+	respuesta y la ingresar con el botón y nose sobre pongan los spans
+	PARA VALIDAR LA FUNCION DEL SPAN Y PARA QUE DESAPARESCAN SE UTILIZA UN WHILE Y DENTRO DE ESTE UN FOR
+	CUANDO COMIENZA EL PROGRAMA TENEMOS 0 SPANS, POR LO TANTO NO ENTRA DENTRO DEL CICLO WHILE. CUANDO 
+	PASA POR LAS FUNCIONES SI ESTA MAL EL VALOR DEL INPUT APARECEN LOS SPANS. CUANDO VUELVES A DAR CLICK 
+	EN EL BOTON REGISTRAR, VUELVE A COMENZAR EL PROGRMAMA. EN ESTE MOMENTO YA HAY SPAN POR LO TANTO EN EL CICLO 
+	WHILE LA CONDICION DICE (quitarSpan.length > 1) COMO YA HAY SPAN EN LA VARIABLE quitarSpan "ya que quitarSpan es
+	un arreglo" LOS SPANS SON MAYORES A 1 ENTONCES ENTRARÁ EN EL CLICLO FOR QUE TIENE COMO CONDICIÓN 
+	(var j = 0 ; j<quitarSpan.length-1 ; j++) QUE NOS DICE QUE EL ARREGLO quitarSpan-1 sera mayor a 0, EN DONDE 0 es igual 
+	j entonces se dará la sentencia quitarSpan[j].parentNode.removeChild(quitarSpan[j]);
+	*/
 	while(quitarSpan.length > 1){
 		for(var j = 0 ; j<quitarSpan.length-1 ; j++){
 			quitarSpan[j].parentNode.removeChild(quitarSpan[j]);
